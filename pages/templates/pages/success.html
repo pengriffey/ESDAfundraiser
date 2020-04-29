@@ -1,0 +1,36 @@
+{% extends 'layout.html'%}
+{% load static %}
+{% block styles %}
+   <style>
+      *{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+      .hbtn{
+         text-decoration: none;
+         padding: 40px;
+         position: absolute;
+         top: 5%;
+         left: 5%;
+         transform: translate(-5%);
+         border: 1px solid #fff;
+         transition: 0.7s ease;
+         color: #fff;
+      }
+      a:hover{
+         color: #000;
+         background: #fff;
+      }
+   </style>
+{% endblock %}
+{% block content %}
+   <header style="height: 100vh; 
+        background: url(https://esda.imfast.io/img/thankyou.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;">
+      <a class="hbtn" href="{% url 'pages:landing-page' %}">HOME</a>
+
+   </header> 
+{% endblock %}

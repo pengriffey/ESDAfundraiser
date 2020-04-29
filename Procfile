@@ -1,0 +1,1 @@
+web: gunicorn djpaystack.wsgi --log-file -

@@ -1,0 +1,313 @@
+{% extends 'layout.html '%}
+{% load static %}
+{% block title %} HOME {%endblock%}
+{% block styles %}
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header{
+            background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(https://esda.imfast.io/img/header.jpg);
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+        }
+        ul{
+            float: right;
+            list-style-type: none;
+            margin-top: 25px;
+        }
+        ul li{
+            display: inline-block;
+        }
+        ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 20px;
+            border: 1px solid transparent;
+            transition: 0.8s ease;
+        }
+        .active a {
+            background-color: #fff;
+            color: #000;
+        }
+        ul li a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        #logo img{
+            float: left;
+            width: 150px;
+            height: auto;
+        }
+        #main{
+            max-width: 1200px;
+            margin: auto;
+        }
+        #title {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        #title h1{
+            color: #fff;
+            font-size: 70px;
+        }
+        #button{
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .btn{
+            border: 1px solid #fff;
+            padding: 10px 30px;
+            color: #fff;
+            text-decoration: none;
+            transition: 0.7s ease;
+        }
+        .btn:hover{
+            background-color: #fff;
+            color: #000;
+        }
+        .section{
+            /* margin-top: 5%; */
+            height: 50vh;
+            max-width: 1200px;
+            text-align: center;
+            margin: auto;
+        }
+        #intro1{
+            background-image: url(https://esda.imfast.io/img/lending-a-helping-hand.webp);
+            background-size: cover;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            background-position: center;
+            height: 200px;
+            border-radius: 10px;
+            color: rgba(0,0,0,0.1);
+
+        }
+        #intro2{
+            background-image: url(https://esda.imfast.io/img/photo-1531206715517-5c0ba140b2b8.jpg);
+            background-size: cover;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            background-position: center;
+            height: 200px;
+            border-radius: 10px;
+            color: rgba(0,0,0,0.1);
+
+        }
+        .intro{
+            display: inline-block;
+            width: 45%;
+            padding: 20px;
+        }
+        .intro h2{
+            margin-top: 8%;
+            margin-bottom: 3%;
+        }
+        .testimonials{
+            height: 100vh;
+            width: 100%;
+            background-color: #000000;
+            color: #ececec;
+            text-align: center;
+        }
+        .fundraise{
+            height: 50vh;
+            text-align: center;
+            margin: auto;
+            background-image: url(https://esda.imfast.io/img/send-heart.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 1;
+            
+        }
+        #footer{
+        
+            background-color: #231903;
+            color: #9dc6a7;
+            height: 10vh;
+        }
+        .footer{
+            padding: 30px 20px;
+            max-width: 1200px;
+            text-align: center;
+            margin: auto;
+        }
+        .footer span{
+            border-right: 1px solid ;
+            padding: 10px 30px;
+        }
+        .dbtn{
+            background: #fcbf1e;
+            color: #120136;
+            border: 1px solid #120136
+            border-radius: 20px;
+            font-weight: bolder;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+
+        }
+        #logo span{
+            float: left;
+            margin-top: 2%;
+            color: #FFF;
+            font-size: 1.5rem; 
+            font-weight: bolder;
+        }
+        #myVideo {
+            height: 100%;
+            position: static;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+}
+
+        /* Add some content at the bottom of the video/page */
+        .content {
+            position: relative;
+            bottom: 150px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 100%;
+            padding: 20px;
+        }
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+        
+       
+       
+
+
+    </style>
+{% endblock %}
+    
+{% block content %}
+<header>
+    <div id="main">
+        <div id="logo"><img src="https://esda.imfast.io/img/logo.png" alt=""><span>ESDA</span></div>
+        <ul>
+            <li><a href="{% url 'pages:landing-page' %}">Home</a></li>
+            <li><a href="#test" >What We DO</a></li>
+            <li><a href="">About</a></li>
+        </ul>
+    </div>
+    <div id="title"><h1>Heal The World</h1></div>
+    <div id="button">
+        <a class="btn" href="{% url 'payment:charge' %}">change a live today</a>
+    </div>
+    <a class="btn dbtn" href="{% url 'payment:charge' %}">donate</a>
+</header>
+<section id="section" class="section">
+    <div id="intro" class="intro">
+        <h2>The Motivation</h2>
+        <p>Growing a flower mandatorily requires soil, water sunlight, labor and patience.
+        Thats how to keep a balance in our unbalanced world.
+        Everything corelates, we need each other for our survival.
+        </p>
+        <p>
+            Here comes a situation where lives are way too farther apart. 
+            A huge part of our societies are very disadvantaged and lacking. 
+            We got the <strong>disabled</strong>, <strong>the poor</strong>, <strong>the homeless</strong>,
+            <strong>the orphans</strong> and <strong>calamity infested areas</strong>.
+        </p>
+    </div>
+    
+</section>
+<section id="section" class="section">
+    <div id="intro1" class="intro">
+        <h2>Moving People From Poverty to Possibilities</h2>
+        <p>Your gift to  our charity campaign changes lives of hundrends to thousands.
+            Through you and our various programs, the disadvantaged part of our societies
+            are given hope to live.
+        </p>
+    </div>
+    <div class="intro">
+        <h2>Moving People From Poverty to Possibilities</h2>
+        <p>Your gift to  our charity campaign changes lives of hundrends to thousands.
+            Through you and our various programs, the disadvantaged part of our societies
+            are given hope to live.
+        </p>
+    </div>
+</section>
+<section id="section" class="section">
+    <div class="intro">
+        <h2>Get Your Collegues Together</h2>
+        <p>You and your environment can together impact lives in rural africa, 
+            providing some shelter, food and good water supply amongst others. 
+        </p>
+    </div>
+    <div id="intro2" class="intro">
+        <h2>Get Your Collegues Together</h2>
+        <p>You and your environment can together impact lives in rural africa, 
+            providing some shelter, food and good water supply amongst others. 
+        </p>
+    </div>
+</section>
+<section id="test" class="testimonials">
+    <video autoplay muted loop id="myVideo">
+        <source src="https://esda.imfast.io/img/rain.mp4" type="video/mp4">
+      </video>
+      
+      <!-- Optional: some overlay text to describe the video -->
+      <div class="content">
+        <h1>Prepare for the better</h1>
+        <p>When the Unexpected happens people struggle. Make room and plans for contingencies</p>
+        <!-- Use a button to pause/play the video with JavaScript -->
+        <button id="myBtn" onclick="myFunction()">Pause</button>
+      </div>
+    
+</section>
+<section style="background-color: #f4eeffef;" class=" fundraise" >
+
+</section>
+<section id="footer">
+    <div class="footer">
+        <span>gyimah.charity@yahoo.com</span> <span><strong>ESDA</strong>.org</span> <span>You can make a difference</span>
+    </div>
+</section>
+
+<script>
+    // Get the video
+var video = document.getElementById("myVideo");
+
+// Get the button
+var btn = document.getElementById("myBtn");
+
+// Pause and play the video, and change the button text
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>
+{% endblock%}
